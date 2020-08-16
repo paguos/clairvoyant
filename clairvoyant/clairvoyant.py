@@ -32,7 +32,8 @@ class Clairvoyant:
     def set_agent(self, agent: ClairvoyantAgent):
         self.agent = agent
         Path(
-            f"logs/{type(self.agent).__name__}").mkdir(parents=True, exist_ok=True)
+            f"logs/{type(self.agent).__name__}"
+        ).mkdir(parents=True, exist_ok=True)
 
     def train(self, arg, start, end, interval, plot=True):
         value = start

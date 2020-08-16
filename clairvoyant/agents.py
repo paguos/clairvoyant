@@ -1,10 +1,7 @@
 import copy
-import pandas as pd
 
-from datetime import datetime
-from fbprophet.plot import add_changepoints_to_plot
-import matplotlib.pyplot as plt
 from fbprophet import Prophet
+import pandas as pd
 
 from clairvoyant.utils import suppress_stdout_stderr
 

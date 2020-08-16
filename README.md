@@ -31,5 +31,5 @@ make install
 Run the tests:
 
 ```sh
-make tests
+make test
 ```
