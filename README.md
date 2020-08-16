@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/paguos/clairvoyant.svg?style=svg)](https://circleci.com/gh/paguos/clairvoyant)
+
 # Clairvoyant
 
 A toolkit for predicting the future using well established time series analysis tools.
