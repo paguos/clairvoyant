@@ -11,9 +11,18 @@ jobs:
       - run:
           command: pip install pipenv
           name: Install pipenv
+      - restore_cache:
+          keys:
+            - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+            - pip-packages-v1-{{ .Branch }}-
+            - pip-packages-v1-
       - run:
           command: make install
           name: Install dependencies
+      - save_cache:
+          paths:
+            - ~/.local/share/virtualenvs/venv
+          key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
       - run:
           command: make test
           name: Test
