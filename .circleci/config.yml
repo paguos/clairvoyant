@@ -17,7 +17,13 @@ jobs:
             - pip-packages-v1-{{ .Branch }}-
             - pip-packages-v1-
       - run:
-          command: make install
+          command: |
+              if $(pipenv --venv) ; then
+                  echo "Command succeeded"
+              else
+                  echo "Command failed"
+                  make install
+              fi
           name: Install dependencies
       - save_cache:
           paths:
