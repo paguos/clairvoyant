@@ -12,6 +12,9 @@ jobs:
           command: pip install pipenv
           name: Install pipenv
       - run:
+          command: make install
+          name: Install dependencies
+      - run:
           command: make test
           name: Test
 
