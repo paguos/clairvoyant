@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+autopep8 = "*"
+pylint = "*"
+pytest = "*"
+vcrpy = "*"
+pytest-vcr = "*"
+flake8 = "*"
+pipenv-setup = "*"
+
+[packages]
+fbprophet = "*"
+matplotlib = "*"
+pandas = "*"
+loguru = "*"
+sklearn = "*"
+
+[requires]
+python_version = "3.8"
