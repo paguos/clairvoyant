@@ -39,6 +39,12 @@ class ProphetAgent(ClairvoyantAgent):
             future["floor"] = self.kwargs["floor"]
         forecast = model.predict(future)
 
+        if plot:
+            model.plot(forecast).savefig(
+                f"logs/{type(self).__name__}/fbprophet.png")
+            model.plot_components(forecast).savefig(
+                f"logs/{type(self).__name__}/fbprophet_componets.png")
+
         prediction = {
             "trend": forecast["trend"].values.tolist()[-forecast_length:],
             "ds": self.format_dates(forecast["ds"])[-forecast_length:]

@@ -75,12 +75,11 @@ class Clairvoyant:
 
     def predict(self, periods):
 
-        plt.figure(f"prediction_{periods}")
-
         forecast = self.agent.predict(
             self.data, periods, plot=True
         )
 
+        plt.figure(f"prediction_{periods}")
         self._plot_set(self.data, "data")
         self._plot_set(forecast, "forecast")
 
